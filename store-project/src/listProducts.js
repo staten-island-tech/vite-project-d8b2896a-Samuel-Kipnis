@@ -1,5 +1,3 @@
-import products from './productInfo';
-
 function createHTML(product) {
 	const container = document.createElement('div');
 	container.classList.add('product');
@@ -19,7 +17,7 @@ function createHTML(product) {
 	return container;
 }
 
-function listProductDisplays() {
+function listProductDisplays(products) {
 	const display = document.createElement('div');
 	display.classList.add('container');
 
