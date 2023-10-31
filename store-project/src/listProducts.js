@@ -1,18 +1,24 @@
+function capitalize(string) {
+	console.log(string);
+	return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 function createHTML(product) {
 	const container = document.createElement('div');
 	container.classList.add('product');
 
 	const title = document.createElement('h3');
-	title.textContent = product.title;
+	title.textContent = product.name;
 
 	const img = document.createElement('img');
-	img.src = product.img;
-	img.alt = product.title;
-	img.style.height = '200px';
-	const price = document.createElement('p');
-	price.textContent = product.price;
+	const nutrition = document.createElement('ul');
+	Object.keys(product.nutritions).forEach((key) => {
+		const nutrient = document.createElement('li');
+		nutrient.textContent = `${capitalize(key)}: ${product.nutritions[key]}${key != 'calories' ? 'g' : ''}`;
+		nutrition.append(nutrient);
+	});
 
-	container.append(title, img, price);
+	container.append(title, img, nutrition);
 
 	return container;
 }
