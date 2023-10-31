@@ -10,15 +10,16 @@ function createHTML(product) {
 	const title = document.createElement('h3');
 	title.textContent = product.name;
 
-	const img = document.createElement('img');
 	const nutrition = document.createElement('ul');
 	Object.keys(product.nutritions).forEach((key) => {
 		const nutrient = document.createElement('li');
-		nutrient.textContent = `${capitalize(key)}: ${product.nutritions[key]}${key != 'calories' ? 'g' : ''}`;
+		nutrient.textContent = `${capitalize(key)}: ${product.nutritions[key]}${
+			key != 'calories' ? 'g' : ''
+		}`;
 		nutrition.append(nutrient);
 	});
 
-	container.append(title, img, nutrition);
+	container.append(title, nutrition);
 
 	return container;
 }

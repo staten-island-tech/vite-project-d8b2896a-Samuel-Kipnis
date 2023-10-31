@@ -1,5 +1,11 @@
 import './styles/style.css';
-import productInfo from './src/productInfo';
-import listProductDisplays from './src/listProducts';
+import listActivityDisplays from './src/listActivities';
+import getActivities from './src/randomActivity';
 
-document.querySelector('#app').append(listProductDisplays(productInfo));
+async function main() {
+	const activities = await getActivities();
+	console.log(activities);
+	document.querySelector('#app').append(listActivityDisplays(activities));
+}
+
+main();
