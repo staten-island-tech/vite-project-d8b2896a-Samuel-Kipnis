@@ -16,19 +16,19 @@ function randomType() {
 }
 
 async function getActivity(type = randomType()) {
-	const res = await fetch(url, {
+	const data = await fetch(url, {
 		type: type,
 	})
 		.then((res) => res.json())
 		.then((data) => {
-			console.log(data);
 			return data;
 		});
+	return data;
 }
 
-async function getActivities() {
+async function getActivities(num) {
 	const activities = [];
-	for (let i = 0; i < 10; i++) {
+	for (let i = 0; i < num; i++) {
 		const activity = await getActivity();
 		activities.push(activity);
 	}

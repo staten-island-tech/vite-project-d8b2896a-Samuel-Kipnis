@@ -7,19 +7,24 @@ function createHTML(activity) {
 	const container = document.createElement('div');
 	container.classList.add('activity');
 
-	const title = document.createElement('h3');
+	const title = document.createElement('h2');
 	title.textContent = activity.activity;
 
-	const type = document.createElement('h4');
-	type.textContent = activity.type;
+	const type = document.createElement('p');
+	type.textContent = `Type: ${activity.type}`;
 
-	const price = document.createElement('h4');
-	price.textContent = activity.price;
+	const price = document.createElement('p');
+	price.textContent = `Price: ${activity.price * 10}/10`;
 
-	const participants = document.createElement('h4');
-	participants.textContent = activity.participants;
+	const accessibility = document.createElement('p');
+	accessibility.textContent = `Accessibility: ${
+		10 - activity.accessibility * 10
+	}/10`;
 
-	container.append(title, type, price, participants);
+	const participants = document.createElement('p');
+	participants.textContent = `Participants: ${activity.participants}`;
+
+	container.append(title, type, price, accessibility, participants);
 
 	return container;
 }
