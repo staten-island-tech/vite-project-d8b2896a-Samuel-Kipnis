@@ -1,11 +1,11 @@
 import './styles/style.css';
 import getProducts from './src/getProducts';
 import listProductDisplays from './src/listProducts';
-import renderSelectors from './src/renderSelectors';
+import render from './src/render';
 
 async function main() {
-	const products = await getProducts();
-	document.querySelector('#app').append(listProductDisplays(products));
+	const app = document.querySelector('#app');
+	app.append(render());
 }
 
 main();

@@ -1,20 +1,19 @@
+import getProducts from './getProducts';
+import listProductDisplays from './listProducts';
+
 function capitalize(string) {
 	return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-function renderSelectors() {
+function render() {
 	const container = document.createElement('div');
 
 	const types = [
-		'education',
-		'recreational',
-		'social',
-		'diy',
-		'charity',
-		'cooking',
-		'relaxation',
-		'music',
-		'busywork',
+		'all',
+		'electronics',
+		'jewelery',
+		"men's clothing",
+		"women's clothing",
 	];
 	const typeSelector = document.createElement('select');
 	typeSelector.id = 'typeSelector';
@@ -30,13 +29,23 @@ function renderSelectors() {
 
 		typeSelector.append(typeSelection);
 	});
-	typeSelector.addEventListener('change', (e) => {
-		console.log(typeSelector.options[typeSelector.selectedIndex].value);
+	typeSelector.selectedIndex = -1;
+
+	const outputDiv = document.createElement('div');
+	typeSelector.addEventListener('change', async (e) => {
+		outputDiv.innerHTML = '';
+		outputDiv.append(
+			listProductDisplays(
+				await getProducts(
+					typeSelector.options[typeSelector.selectedIndex].value
+				)
+			)
+		);
 	});
 
-	container.append(selectorLabel, typeSelector);
+	container.append(selectorLabel, typeSelector, outputDiv);
 
 	return container;
 }
 
-export default renderSelectors;
+export default render;
