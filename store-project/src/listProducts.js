@@ -12,6 +12,9 @@ function createHTML(product) {
 
 	const category = document.createElement('p');
 	category.textContent = `Category: ${product.category}`;
+	
+	const category = document.createElement('p');
+	category.textContent = `Category: ${product.category}`;
 
 	const price = document.createElement('p');
 	price.textContent = `Price: $${product.price}`;
