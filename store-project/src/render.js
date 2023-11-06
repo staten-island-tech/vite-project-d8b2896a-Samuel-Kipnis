@@ -19,6 +19,7 @@ function render() {
 	typeSelector.id = 'typeSelector';
 
 	const selectorLabel = document.createElement('label');
+	selectorLabel.id = 'selectorLabel';
 	selectorLabel.for = 'typeSelector';
 	selectorLabel.textContent = 'Selection';
 
