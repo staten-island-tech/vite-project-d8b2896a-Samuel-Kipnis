@@ -2,6 +2,7 @@
 	padding: 0;
 	margin: 0;
 	font-size: 1rem;
+	
 }
 
 .container {
@@ -17,8 +18,39 @@
 	margin: 0.5rem;
 	padding: 0.5rem;
 	border-radius: 1rem;
+	background-color: white;
 }
 
 .product h2 {
 	font-size: 2rem;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+}
+
+.all .product {
+	background-color: white;
+	color: black;
+}
+
+.electronics .product  {
+	background-color: rgb(0, 0, 0);
+	color: rgb(0, 255, 0);
+}
+
+.jewelery .product  {
+	background-color: rgb(119, 119, 119);
+	color: rgb(255, 238, 0);
+}
+
+.mensclothing .product  {
+	background-color: rgb(145, 87, 0);
+	color: rgb(226, 192, 99);
+}
+
+.womensclothing .product  {
+	background-color: rgb(253, 95, 240);
+	color: rgb(161, 6, 141);
 }

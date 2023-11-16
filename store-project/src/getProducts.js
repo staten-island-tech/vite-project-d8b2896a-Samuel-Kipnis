@@ -1,7 +1,7 @@
 const url = 'https://fakestoreapi.com/products';
 
 async function getProducts(category) {
-	if (category != 'all') {
+	if (category !== 'all') {
 		const data = await fetch(url + `/category/${category}`)
 			.then((res) => res.json())
 			.then((data) => {

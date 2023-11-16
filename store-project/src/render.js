@@ -39,7 +39,8 @@ function render() {
 			listProductDisplays(
 				await getProducts(
 					typeSelector.options[typeSelector.selectedIndex].value
-				)
+				),
+				typeSelector.options[typeSelector.selectedIndex].value
 			)
 		);
 	});

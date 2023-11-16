@@ -3,7 +3,7 @@ function capitalize(string) {
 	return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-function createHTML(product) {
+function createHTML(product, type) {
 	const container = document.createElement('div');
 	container.classList.add('product');
 
@@ -26,6 +26,7 @@ function createHTML(product) {
 
 function listProductDisplays(products) {
 	const display = document.createElement('div');
+	display.classList.add('womensClothing');
 	display.classList.add('container');
 
 	products.forEach((product) => {
