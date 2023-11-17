@@ -10,6 +10,16 @@
 	grid-template-columns: repeat(4, 1fr);
 }
 
+#selectorLabel {
+	font-size: 2rem;
+}
+
+#typeSelector {
+	font-size: 1.5rem;
+	padding: 1rem;
+	margin-left: 0.5rem;
+}
+
 .product {
 	display: flex;
 	flex-direction: column;
@@ -31,8 +41,8 @@ body {
 }
 
 .all .product {
-	background-color: white;
-	color: black;
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
 }
 
 .electronics .product  {
@@ -41,16 +51,16 @@ body {
 }
 
 .jewelery .product  {
-	background-color: rgb(119, 119, 119);
-	color: rgb(255, 238, 0);
+	background-color: rgb(100, 99, 99);
+	color: rgb(255, 241, 40);
 }
 
 .mensclothing .product  {
-	background-color: rgb(145, 87, 0);
-	color: rgb(226, 192, 99);
+	background-color: rgb(128, 78, 4);
+	color: rgb(243, 211, 123);
 }
 
 .womensclothing .product  {
-	background-color: rgb(253, 95, 240);
-	color: rgb(161, 6, 141);
+	background-color: rgb(114, 0, 105);
+	color: rgb(255, 95, 234);
 }

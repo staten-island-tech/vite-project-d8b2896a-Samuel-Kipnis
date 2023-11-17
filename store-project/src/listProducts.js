@@ -1,7 +1,4 @@
-function capitalize(string) {
-	console.log(string);
-	return string.charAt(0).toUpperCase() + string.slice(1);
-}
+import { capitalize } from './utils';
 
 function createHTML(product, type) {
 	const container = document.createElement('div');
@@ -11,7 +8,10 @@ function createHTML(product, type) {
 	title.textContent = product.title;
 
 	const category = document.createElement('p');
-	category.textContent = `Category: ${product.category}`;
+	category.textContent = `Category: ${capitalize(product.category)}`;
+
+	const description = document.createElement('p');
+	description.textContent = product.description;
 
 	const price = document.createElement('p');
 	price.textContent = `Price: $${product.price}`;
@@ -19,7 +19,7 @@ function createHTML(product, type) {
 	const rating = document.createElement('p');
 	rating.textContent = `Rating: ${product.rating.rate}/5, ${product.rating.count} reviews.`;
 
-	container.append(title, category, price, rating);
+	container.append(title, category, description, price, rating);
 
 	return container;
 }
