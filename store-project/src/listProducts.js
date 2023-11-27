@@ -26,7 +26,6 @@ function createHTML(product, type) {
 
 function listProductDisplays(products) {
 	const display = document.createElement('div');
-	display.classList.add('womensClothing');
 	display.classList.add('container');
 
 	products.forEach((product) => {
